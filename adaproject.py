@@ -1,4 +1,4 @@
-a =3
+
 import pandas as pd
 u = pd.read_json("/Users/emileabi/Documents/HEC Master/second semester/ADA/Projet Ada/hec-project/data/hec-project-data-sample.json")
 
@@ -25,29 +25,27 @@ u = pd.read_json("/Users/emileabi/Documents/HEC Master/second semester/ADA/Proje
 # 5. Same approach is recommended for question # 2. "no action", "few" (1-3 actions), "some" (4-10 actions), "many" (10-50 actions), "a lot" (50+ actions)
 #
 
-# In[3]:
-
 
 u.head()
-
-
-# In[10]:
-
 
 for event in u.loc[0].job_click:
     print(event["keyword"], event["eventDate"])
 
 
-# In[ ]:
+u.sort_index(axis = 0, inplace=True )
 
-df = pd.DataFrame()
+u['job_click'][0][0]['empname']
+u['job_click'][0][1]
+x=0
+for i in range(len(u['job_click'][0][0])):
+    x += 1
+print(x)
 
-df = u
+x=0
+for i in range(len(u['job_click'][0][1])):
+    x += 1
+print(x)
 
-df.sort_values(by="registration_source", inplace=True)
-df["registration_source"].head(50)
+u['job_click'][0][1]
 
-df.job_search.astype(str)
-newdf = df.job_search.astype(str).str.split(', ', expand = True)
-
-
+u['job_click'][2][0]['']
